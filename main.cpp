@@ -8,14 +8,8 @@ void fun(Player * p) {
 
 int main()
 {
-<<<<<<< HEAD
-    Board *b = new Board(5, 7);
     //b->show();
     std::string s1, buffer;
-=======
-
-    std::string s1;
->>>>>>> origin/master
     s1="Hans";
     std::cin >> buffer;
     std::cout << buffer.at(0) <<std::endl;
