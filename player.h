@@ -1,4 +1,7 @@
 //Von Dominik Hofmann & Lukas Reisinger
+#ifndef   FILE_H //player.h wird öfter gebraucht, maßnahme gegen redefinition of class error
+#define   FILE_H
+
 #include <string>
 #include <iostream>
 
@@ -12,3 +15,5 @@ public:
 protected:
     std::string name;
 };
+
+#endif
