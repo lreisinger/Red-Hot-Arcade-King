@@ -8,7 +8,8 @@ void fun(Player * p) {
 
 int main()
 {
-    Board
+    Board *b = new Board(5, 7);
+    b->show();
     std::string s1;
     s1="Hans";
     HumanPlayer * h=new HumanPlayer(s1,'B');
