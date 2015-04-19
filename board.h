@@ -9,12 +9,12 @@ public:
     int insertColumn() const;
     bool setStone(int column, Player *player);
     bool columnFull(int column);
+    bool isColumn(int col);
     void show();
 private:
     int columns;
     int lines;
     char** fields;
-    bool isColumn(int col);
     bool isLine(int line);
     bool isField(int line, int col);
     bool checkWin(int line, int column, Player *player);
