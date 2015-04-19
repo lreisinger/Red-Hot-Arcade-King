@@ -16,6 +16,6 @@ private:
     char** fields;
     bool isColumn(int col);
     bool isLine(int line);
-    bool Board::isField(int line, int col);
+    bool isField(int line, int col);
     bool checkWin(int line, int column, Player *player);
 };

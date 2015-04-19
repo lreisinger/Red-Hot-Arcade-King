@@ -103,13 +103,13 @@ bool Board::checkWin(int line, int column, Player *player)
 
     while(isColumn(tmp_column-1) && fields[tmp_line][tmp_column-1] == player->kuerzel)//horizontal vor platz
     {
-        tmp_column--
+        tmp_column--;
         counter++;
     }
 
     tmp_column=column;
 
-    if(counter = 4)
+    if(counter == 4)
         return true;
 
     counter = 1;//reset counter
@@ -127,13 +127,13 @@ bool Board::checkWin(int line, int column, Player *player)
 
     while(isColumn(tmp_line-1) && fields[tmp_line+1][tmp_column] == player->kuerzel)//vertikal ueber platz
     {
-        tmp_line--
+        tmp_line--;
         counter++;
     }
 
     tmp_line=line;
 
-    if(counter = 4)
+    if(counter == 4)
         return true;
 
     counter = 1;//reset counter
@@ -157,7 +157,7 @@ bool Board::checkWin(int line, int column, Player *player)
         counter++;
     }
 
-    if(counter = 4)
+    if(counter == 4)
         return true;
 
     counter = 1;//reset counter
@@ -181,7 +181,7 @@ bool Board::checkWin(int line, int column, Player *player)
         counter++;
     }
 
-    if(counter = 4)
+    if(counter == 4)
         return true;
 
     //counter = 1;//reset counter
