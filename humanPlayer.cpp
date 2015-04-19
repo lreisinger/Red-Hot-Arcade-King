@@ -9,12 +9,12 @@ HumanPlayer::~HumanPlayer() {
 }
 
 void HumanPlayer::printName() const {
-    std::cout << "Player \"" << this->name << "\"" << std::endl;
+    std::cout << "Player " << this->name << std::endl;
 }
 
 int HumanPlayer::chooseColumn() const {
     int column;
-    std::cout << "\"" << this->name << "\" choose column: ";
+    std::cout << std::endl << "" << this->name << " choose column: ";
     std::cin >> column;
     return column-1; //Umwandeln Spaltennummer auf Index
 }

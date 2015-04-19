@@ -10,7 +10,7 @@ public:
     std::string name;
     char kuerzel;
     Player(std::string s, char kur);
-    virtual ~Player(){std::cout << "Player geloescht!" << std::endl;}
+    virtual ~Player(){std::cout << "Player deleted!" << std::endl;}
     virtual void printName() const;
     virtual int chooseColumn() const = 0;
 };

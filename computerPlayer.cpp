@@ -18,5 +18,6 @@ void ComputerPlayer::printName() const {
 }
 
 int ComputerPlayer::chooseColumn() const {
-    return rand()%columns;
+    int column=rand() % columns;
+    return column;
 }

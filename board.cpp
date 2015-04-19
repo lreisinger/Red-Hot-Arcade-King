@@ -21,10 +21,14 @@ Board::Board(int columns, int lines):
     }
 }
 
-//Board::~Board()
-//{
-//    //dtor
-//}
+Board::~Board()
+{
+    for(int i = 0; i < lines; ++i) {
+        delete [] fields[i];
+    }
+    delete [] fields;
+    std::cout << "Board deleted!" << std::endl;
+}
 
 
 bool Board::setStone(int column, Player *player)
@@ -56,9 +60,9 @@ bool Board::setStone(int column, Player *player)
     }
 }
 
-bool Board::columnFull(int column)
+bool Board::columnFull(int column) const
 {
-    if(fields[columns][0] == '.')
+    if(fields[0][column] == '.')
     {
         return false;
     }
@@ -67,7 +71,7 @@ bool Board::columnFull(int column)
 
 
 
-void Board::show() {
+void Board::show() const {
     std::cout << std::endl;
     for (int y = 0; y < lines; ++y) {
         for (int x=0; x<columns; ++x) {
@@ -84,9 +88,9 @@ void Board::show() {
 }
 
 
-bool Board::checkWin(int line, int column, Player *player)
+bool Board::checkWin(int line, int column, Player *player) const
 {
-    if(false)//!isField(line, column))
+    if(!isField(line, column))
     {
         return false;
     }
@@ -193,21 +197,21 @@ bool Board::checkWin(int line, int column, Player *player)
 }
 
 
-bool Board::isColumn(int col)
+bool Board::isColumn(int col) const
 {
     if(col < columns && col >= 0)
         return true;
     return false;
 }
 
-bool Board::isLine(int line)
+bool Board::isLine(int line) const
 {
     if(line < lines && line >= 0)
         return true;
     return false;
 }
 
-bool Board::isField(int line, int col)
+bool Board::isField(int line, int col) const
 {
     if(isLine(line) && isColumn(col))
         return true;
