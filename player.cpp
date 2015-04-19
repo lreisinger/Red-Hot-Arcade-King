@@ -7,7 +7,7 @@ Player::Player(std::string s, char kur):name(s),kuerzel(kur)  {
 }
 
 virtual Player::~Player() {
-    std::cout << "Player gelöscht!" << oestd::endl;
+    std::cout << "Player geloescht!" << oestd::endl;
 }
 
 void Player::printName() const {
