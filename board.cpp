@@ -34,18 +34,19 @@ bool Board::setStone(int column, Player *player)
     }
 
     int place = -1;
-    while(fields[place+1][columns] == '.')
+    while(fields[place+1][column] == '.')
     {
         place++;
     }
 
     if(place > -1)//wenn platz vorhanden
     {
-        fields[place][columns] = player->kuerzel;
+        fields[place][column] = player->kuerzel;
         return true;
     }
     else
     {
+        std::cout << "-1";
         return false;
     }
 }

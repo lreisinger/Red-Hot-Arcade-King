@@ -8,14 +8,19 @@ void fun(Player * p) {
 
 int main()
 {
-    Board *b = new Board(8, 5);
-    //b.setStone(2)
-    b->show();
+
     std::string s1;
     s1="Hans";
     HumanPlayer * h=new HumanPlayer(s1,'B');
     fun(h);
     h->printName();
-    delete h;
+    //delete h;
+
+
+    Board *b = new Board(8, 5);
+    //if(b->setStone(2, h))
+    //    std::cout << "TRUE";
+    b->setStone(2, h);
+    b->show();
     return 0;
 }
