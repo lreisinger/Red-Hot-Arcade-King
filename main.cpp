@@ -8,9 +8,14 @@ void fun(Player * p) {
 
 int main()
 {
+<<<<<<< HEAD
     Board *b = new Board(5, 7);
     //b->show();
     std::string s1, buffer;
+=======
+
+    std::string s1;
+>>>>>>> origin/master
     s1="Hans";
     std::cin >> buffer;
     std::cout << buffer.at(0) <<std::endl;
@@ -19,6 +24,13 @@ int main()
     HumanPlayer * h=new HumanPlayer(s1,'B');
     fun(h);
     h->printName();
-    delete h;
+    //delete h;
+
+
+    Board *b = new Board(8, 5);
+    //if(b->setStone(2, h))
+    //    std::cout << "TRUE";
+    b->setStone(2, h);
+    b->show();
     return 0;
 }
