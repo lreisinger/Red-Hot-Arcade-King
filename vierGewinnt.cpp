@@ -11,22 +11,20 @@ void printWinner(Player * p);
 void printDraw();
 bool playerAStarts();
 Player * createHumanPlayer();
-Player * createCpu(bool secondCpu);
-Player * changePlayer(bool start, int turn);
-bool isDraw(Board * b);
+Player * createCpu(bool secondCpu, int columns);
+Player * changePlayer(bool start, int turn, Player * playerA, Player * playerB);
+bool isDraw(Board * b, int columns);
 bool newRound();
 
 int game() {
     const int columns=8;
     const int rows=5;
     Board * board=new Board(columns,rows);
-    std::string name, buffer;
     Player * playerA;
     Player * playerB;
     Player * activePlayer;
     int turn, choice;
     bool game, win, start;
-    char c;
     do {
         //Spielmodus waehlen
         std::cout << "Choose game mode:" << std::endl;
@@ -46,18 +44,18 @@ int game() {
             break;
         case 2:
             playerA=createHumanPlayer();
-            playerB=createCpu(false);
+            playerB=createCpu(false, columns);
             break;
         case 3:
-            playerA=createCpu(false);
-            playerB=createCpu(true);
+            playerA=createCpu(false, columns);
+            playerB=createCpu(true, columns);
             break;
         }
         //Werte setzen
         turn=1;
         game=true;
         win=false;
-        bool start=playerAStarts();
+        start=playerAStarts();
         if (start)
             activePlayer=playerA;
         else
@@ -67,10 +65,10 @@ int game() {
             if (win)
                 game=false;
             else {
-                activePlayer=changePlayer(start, turn);
+                activePlayer=changePlayer(start, turn, playerA, playerB);
                 turn++;
             }
-            if (isDraw(board))
+            if (isDraw(board, columns))
                 game=false;
         } while (game);
     } while (newRound());
@@ -102,3 +100,52 @@ bool playerAStarts() {
     return false;
 }
 
+Player * createHumanPlayer() {
+    std::string name, buffer;
+    std::cout << "Name: ";
+    std::cin >> name ;
+    std::cout << "Symbol for \"" << name << "\": ";
+    std::cin >> buffer;
+    return new HumanPlayer(name, buffer.at(0));
+}
+
+Player * createCpu(bool secondCpu, int columns) {
+    std::string buffer;
+    std::cout << "Symbol for Computer";
+    if (secondCpu)
+        std::cout << " 2: ";
+    else
+        std:: cout << ": ";
+    std::cin >> buffer;
+    return new ComputerPlayer(buffer.at(0), columns, secondCpu);
+}
+
+Player * changePlayer(bool start, int turn, Player * playerA, Player * playerB) {
+    int i=0;
+    if (start)
+        i=1;
+    if ((turn%2)==i)
+        return playerB;
+    return playerA;
+}
+
+bool isDraw(Board * b, int columns) {
+    for (int i=0; i<columns; i++) {
+        if (!b->columnFull(i))
+            return false;
+    }
+    return true;
+}
+
+bool newRound() {
+    std::string buffer;
+    std::cout << std::endl << "Want to play another game? Yes/No: ";
+    std::cin >> buffer;
+    while (buffer.at(0)!='Y' && buffer.at(0)!='y' && buffer.at(0)!='N' && buffer.at(0)!='n') {
+        std::cout << "Wrong imput! Try it again: ";
+        std::cin >> buffer;
+    }
+    if (buffer.at(0)=='Y' || buffer.at(0)=='y')
+        return true;
+    return false;
+}
