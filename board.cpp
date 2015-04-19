@@ -34,7 +34,7 @@ bool Board::setStone(int column, Player *player)
     }
 
     int place = -1;
-    while(fields[place+1][column] == '.')
+    while(place<(lines-1) && fields[place+1][column] == '.' )
     {
         place++;
     }
