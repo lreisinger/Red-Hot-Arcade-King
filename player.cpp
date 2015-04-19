@@ -3,7 +3,7 @@
 #include <iostream>
 #include "player.h"
 
-Player::Player(std::string s, char kur):kuerzel(kur), name(s)  {
+Player::Player(std::string s, char kur):name(s), kuerzel(kur)  {
 }
 
 void Player::printName() const {
