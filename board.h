@@ -1,12 +1,15 @@
 //Von Dominik Hofmann & Lukas Reisinger
 #include <string>
+#include "player.h"
 
 class Board {
 public:
-    Board(std::string s);
+    Board(int columns, int lines);
     //~Board();
-    void printName() const;
     int insertColumn() const;
+    bool setStone(int column, Player *player);
+    bool columnFull(int column);
+    void show();
 private:
     int columns;
     int lines;

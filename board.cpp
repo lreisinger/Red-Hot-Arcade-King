@@ -1,5 +1,6 @@
-#include "Board.h"
-#include <vector>"
+#include <iostream>
+#include "board.h"
+#include <vector>
 using std::vector;
 
 
@@ -8,39 +9,39 @@ Board::Board(int columns, int lines):
     lines(lines)
 {
 
-    fields = new char*[height];
-    for (int i = 0; i < height; ++i) {
-        fields[i] = new char[width];
+    fields = new char*[lines];
+    for (int i = 0; i < lines; ++i) {
+        fields[i] = new char[columns];
 
-        for (int j=0; j<width; ++j) {
-            fields[i][j] = ".";
+        for (int j=0; j<columns; ++j) {
+            fields[i][j] = '.';
         }
 
     }
-    for (int i = 0; i < height; ++i) {
-        for (int j=0; j<width; ++j) {
-            fields(j,i,0);
-        }
-    }
 }
 
-Board::~Board()
-{
-    //dtor
-}
+//Board::~Board()
+//{
+//    //dtor
+//}
 
 
 bool Board::setStone(int column, Player *player)
 {
+    if(column < 0 || column >= columns)
+    {
+        return false;//column out of bounds
+    }
+
     int place = -1;
-    while(fields[place+1][columns] == ".")
+    while(fields[place+1][columns] == '.')
     {
         place++;
     }
 
-    if(place > -1)
+    if(place > -1)//wenn platz vorhanden
     {
-        fields[place][columns] = player->
+        fields[place][columns] = player->kuerzel;
         return true;
     }
     else
@@ -51,7 +52,7 @@ bool Board::setStone(int column, Player *player)
 
 bool Board::columnFull(int column)
 {
-    if(fields[columns][0] == ".")
+    if(fields[columns][0] == '.')
     {
         return false;
     }
@@ -62,9 +63,14 @@ bool Board::columnFull(int column)
 
 void Board::show() {
     std::cout << std::endl;
-    for (int y = 0; y < height; ++y) {
-        for (int x=0; x<width; ++x) {
+    for (int y = 0; y < lines; ++y) {
+        std::cout << y+1;
+        for (int x=0; x<columns; ++x) {
             std::cout << fields[y][x];
+        }
+        std::cout << std::endl;
+        for (int x=0; x<columns; ++x) {
+            std::cout << x+1;
         }
         std::cout << std::endl;
     }
