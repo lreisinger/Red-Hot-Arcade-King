@@ -8,7 +8,8 @@ void fun(Player * p) {
 
 int main()
 {
-    Board *b = new Board(5, 7);
+    Board *b = new Board(8, 5);
+    //b.setStone(2)
     b->show();
     std::string s1;
     s1="Hans";
