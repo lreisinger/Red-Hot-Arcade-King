@@ -14,7 +14,7 @@ void HumanPlayer::printName() const {
 
 int HumanPlayer::chooseColumn() const {
     int column;
-    std::cout << "Choose column: ";
+    std::cout << "\"" << this->name << "\" choose column: ";
     std::cin >> column;
     return column-1; //Umwandeln Spaltennummer auf Index
 }
