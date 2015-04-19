@@ -9,7 +9,7 @@ HumanPlayer::~HumanPlayer() {
 }
 
 void HumanPlayer::printName() const {
-    std::cout << this->name << std::endl;
+    std::cout << "Spieler \"" << this->name << "\"" << std::endl;
 }
 
 int HumanPlayer::chooseColumn() const {

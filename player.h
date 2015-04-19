@@ -16,4 +16,4 @@ protected:
     std::string name;
 };
 
-#endif
+#endif //PLAYER_H

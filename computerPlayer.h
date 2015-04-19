@@ -3,8 +3,10 @@
 
 class ComputerPlayer: public Player {
 public:
-    ComputerPlayer(std::string s, char kur);
+    ComputerPlayer(char kur, int col);
     ~ComputerPlayer();
     void printName() const;
     int chooseColumn() const;
+private:
+    int columns;
 };
