@@ -1,8 +1,7 @@
-#makefile
 all: connect4
 
 connect4: board.o computerPlayer.o humanPlayer.o player.o connect4.o
-	g++ board.o computerPlayer.o humanPlayer.o player.o connect4.o -o connect4
+	g++ -std=c++11 board.o computerPlayer.o humanPlayer.o player.o connect4.o -o connect4
 
 connect4.o: connect4.cpp
 	g++ -Wall -g -std=c++11 -c connect4.cpp -o connect4.o
