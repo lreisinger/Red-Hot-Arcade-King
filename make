@@ -10,7 +10,7 @@ connect4.o: connect4.cpp
 board.o: board.cpp board.h
 	g++ -Wall -g -std=c++11 -c board.cpp -o board.o
 
-computerPlayer.o: computerPlayer.cpp computerPlayer.h board.h
+computerPlayer.o: computerPlayer.cpp computerPlayer.h
 	g++ -Wall -g -std=c++11 -c computerPlayer.cpp -o computerPlayer.o
 
 humanPlayer.o: humanPlayer.cpp humanPlayer.h

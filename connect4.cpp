@@ -16,7 +16,7 @@ Player * changePlayer(bool start, int turn, Player * playerA, Player * playerB);
 bool isDraw(Board * b, int columns);
 bool newRound();
 
-int game() {
+int main() {
     const int columns=8;
     const int rows=5;
     Board * board=new Board(columns,rows);
