@@ -18,7 +18,7 @@ int main()
     HumanPlayer * h=new HumanPlayer(s1,buffer.at(0));
     std::cout << "Kuerzel AI: ";
     std::cin >> buffer;
-    ComputerPlayer * cpu = new ComputerPlayer(buffer.at(0),8);
+    ComputerPlayer * cpu = new ComputerPlayer(buffer.at(0),8, false);
     std::cout << std::endl;
     fun(h);
     fun(cpu);

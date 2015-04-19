@@ -5,7 +5,10 @@
 #include <iostream>
 #include <random>
 
-ComputerPlayer::ComputerPlayer(char kur, int col):Player("Computer",kur),columns(col){}
+ComputerPlayer::ComputerPlayer(char kur, int col, bool secondCpu):Player("Computer",kur),columns(col){
+    if (secondCpu)
+        this->name+=" 2";
+}
 
 ComputerPlayer::~ComputerPlayer() {
     std::cout << "ComputerPlayer geloescht!" << std::endl;
