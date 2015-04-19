@@ -3,11 +3,11 @@
 #include <iostream>
 #include "player.h"
 
-Player::Player(std::string s):name(s)  {
+Player::Player(std::string s, char kur):name(s),kuerzel(kur)  {
 }
 
-int Player::chooseColumn() const {
-    return -1;
+virtual Player::~Player() {
+    std::cout << "Player gelöscht!" << oestd::endl;
 }
 
 void Player::printName() const {

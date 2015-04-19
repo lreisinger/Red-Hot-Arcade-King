@@ -3,10 +3,11 @@
 
 class Player {
 public:
-    Player(std::string s);
-    //~Player();
-    void printName() const;
-    int chooseColumn() const;
-private:
+    Player(std::string s, char kur);
+    virtual ~Player();
+    virtual void printName() const;
+    virtual int chooseColumn() const = NULL;
+protected:
     std::string name;
+    char kuerzel;
 };
