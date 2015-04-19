@@ -5,16 +5,16 @@
 HumanPlayer::HumanPlayer(std::string s, char kur):Player(s,kur){}
 
 HumanPlayer::~HumanPlayer() {
-    std::cout << "HumanPlayer geloescht!" << std::endl;
+    std::cout << "HumanPlayer deleted!" << std::endl;
 }
 
 void HumanPlayer::printName() const {
-    std::cout << "Spieler \"" << this->name << "\"" << std::endl;
+    std::cout << "Player \"" << this->name << "\"" << std::endl;
 }
 
 int HumanPlayer::chooseColumn() const {
     int column;
-    std::cout << "Welche Spalte? ";
+    std::cout << "Choose column: ";
     std::cin >> column;
     return column-1; //Umwandeln Spaltennummer auf Index
 }

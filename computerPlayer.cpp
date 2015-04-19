@@ -11,7 +11,7 @@ ComputerPlayer::ComputerPlayer(char kur, int col, bool secondCpu):Player("Comput
 }
 
 ComputerPlayer::~ComputerPlayer() {
-    std::cout << "ComputerPlayer geloescht!" << std::endl;
+    std::cout << "ComputerPlayer deleted!" << std::endl;
 }
 
 void ComputerPlayer::printName() const {
