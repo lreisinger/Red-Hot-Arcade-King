@@ -2,7 +2,6 @@
 #include <vector>"
 using std::vector;
 
-#define HEIGHT
 
 Board::Board(int columns, int lines):
     columns(columns),
@@ -31,17 +30,17 @@ Board::~Board()
 }
 
 
-bool setStone(int column, Player *player)
+bool Board::setStone(int column, Player *player)
 {
     int place = -1;
-    while(fields[columns][place+1] == ".")
+    while(fields[place+1][columns] == ".")
     {
         place++;
     }
 
     if(place > -1)
     {
-        fields[columns][place] = player->
+        fields[place][columns] = player->
         return true;
     }
     else
@@ -50,7 +49,7 @@ bool setStone(int column, Player *player)
     }
 }
 
-bool columnFull(int column)
+bool Board::columnFull(int column)
 {
     if(fields[columns][0] == ".")
     {
@@ -61,11 +60,11 @@ bool columnFull(int column)
 
 
 
-void ASCIIImage::show() {
+void Board::show() {
     std::cout << std::endl;
     for (int y = 0; y < height; ++y) {
         for (int x=0; x<width; ++x) {
-            std::cout << imgArray[y][x];
+            std::cout << fields[y][x];
         }
         std::cout << std::endl;
     }
