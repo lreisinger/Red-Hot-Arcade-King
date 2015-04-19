@@ -2,7 +2,7 @@
 #include <vector>"
 using std::vector;
 
-#define HEIGHT1
+#define HEIGHT
 
 Board::Board(int columns, int lines):
     columns(columns),
