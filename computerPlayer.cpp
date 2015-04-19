@@ -1,7 +1,6 @@
 //Von Dominik Hofmann & Lukas Reisinger
 
 #include "computerPlayer.h"
-#include "board.h"
 #include <iostream>
 #include <random>
 

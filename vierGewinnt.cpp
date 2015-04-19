@@ -4,9 +4,11 @@
 #include "board.h"
 #include <string>
 #include <iostream>
+#include <random>
 
 bool spielZug(Board * board, Player * p);
 void printWinner(Player * p);
+void printDraw();
 bool playerAStarts();
 Player * createHumanPlayer();
 Player * createCpu(bool secondCpu);
@@ -80,5 +82,23 @@ bool spielZug(Board * board, Player * p) {
     while (!(board->isColumn(col)) || board->columnFull(col)) {
         col=p->chooseColumn();
     }
-    return board->setStone(col, p);
+    bool b;
+    b=board->setStone(col, p);
+    return b;
 }
+
+void printWinner(Player * p) {
+    std::cout << "Game Over!" << std::endl << "The winner is " << p->name << std::endl;
+}
+
+void printDraw() {
+    std::cout << "Game Over!" << std::endl << "It's a draw!" << std::endl;
+}
+
+bool playerAStarts() {
+    int random=(rand()%10)+1;
+    if (random<=5)
+        return true;
+    return false;
+}
+
