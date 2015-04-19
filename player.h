@@ -1,6 +1,6 @@
 //Von Dominik Hofmann & Lukas Reisinger
-#ifndef   FILE_H //player.h wird öfter gebraucht, maßnahme gegen redefinition of class error
-#define   FILE_H
+#ifndef   PLAYER_H //player.h wird oefter gebraucht, massnahme gegen redefinition of class error
+#define   PLAYER_H
 
 #include <string>
 #include <iostream>
