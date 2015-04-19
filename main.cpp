@@ -32,5 +32,11 @@ int main()
     b->show();
     b->setStone(3, cpu);
     b->show();
+    b->setStone(3, cpu);
+    b->show();
+    b->setStone(3, cpu);
+    b->show();
+    b->setStone(3, cpu);
+    b->show();
     return 0;
 }

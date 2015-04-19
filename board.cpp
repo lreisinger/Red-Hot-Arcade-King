@@ -43,6 +43,11 @@ bool Board::setStone(int column, Player *player)
     if(place > -1)//wenn platz vorhanden
     {
         fields[place][column] = player->kuerzel;
+        if(checkWin(place, column, player))
+        {
+            std::cout << "win player:" << player->kuerzel << " Col:" << column+1 << " Line:" << place+1;
+
+        }
         return true;
     }
     else
@@ -82,7 +87,7 @@ void Board::show() {
 
 bool Board::checkWin(int line, int column, Player *player)
 {
-    if(isField(column, line))
+    if(false)//!isField(line, column))
     {
         return false;
     }
@@ -125,7 +130,7 @@ bool Board::checkWin(int line, int column, Player *player)
 
     tmp_line=line;
 
-    while(isColumn(tmp_line-1) && fields[tmp_line+1][tmp_column] == player->kuerzel)//vertikal ueber platz
+    while(isColumn(tmp_line-1) && fields[tmp_line-1][tmp_column] == player->kuerzel)//vertikal ueber platz
     {
         tmp_line--;
         counter++;
