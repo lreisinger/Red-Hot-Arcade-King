@@ -77,8 +77,8 @@ int game() {
 
 bool spielZug(Board * board, Player * p) {
     int col=p->chooseColumn();
-    while (board->columnFull(col)) {
+    while (!(board->isColumn(col)) || board->columnFull(col)) {
         col=p->chooseColumn();
     }
-    board->setStone(col, p);
+    return board->setStone(col, p);
 }

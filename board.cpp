@@ -45,10 +45,9 @@ bool Board::setStone(int column, Player *player)
         fields[place][column] = player->kuerzel;
         if(checkWin(place, column, player))
         {
-            std::cout << "win player:" << player->kuerzel << " Col:" << column+1 << " Line:" << place+1;
-
+            return true;
         }
-        return true;
+        return false;
     }
     else
     {
