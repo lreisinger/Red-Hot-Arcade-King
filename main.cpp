@@ -28,13 +28,15 @@ int main()
     Board *b = new Board(8, 5);
     //if(b->setStone(2, h))
     //    std::cout << "TRUE";
-    b->setStone(2, h);
-    b->show();
+    b->setStone(1, h);
+    b->setStone(0, cpu);
+    b->setStone(1, cpu);
+    b->setStone(2, cpu);
+    b->setStone(2, cpu);
+    b->setStone(2, cpu);
     b->setStone(3, cpu);
-    b->show();
     b->setStone(3, cpu);
-    b->show();
-    b->setStone(3, cpu);
+    b->setStone(3, h);
     b->show();
     b->setStone(3, cpu);
     b->show();
