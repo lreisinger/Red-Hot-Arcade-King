@@ -9,9 +9,13 @@ void fun(Player * p) {
 int main()
 {
     Board *b = new Board(5, 7);
-    b->show();
-    std::string s1;
+    //b->show();
+    std::string s1, buffer;
     s1="Hans";
+    std::cin >> buffer;
+    std::cout << buffer.at(0) <<std::endl;
+    std::cin >> buffer;
+    std::cout << buffer.at(0) <<std::endl;
     HumanPlayer * h=new HumanPlayer(s1,'B');
     fun(h);
     h->printName();
