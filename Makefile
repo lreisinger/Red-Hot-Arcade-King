@@ -1,3 +1,4 @@
+#Makefile
 all: connect4
 
 connect4: board.o computerPlayer.o humanPlayer.o player.o connect4.o
